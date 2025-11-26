@@ -1,4 +1,28 @@
 /* Global styles for the entire application */
+:root {
+  /* Light mode colors */
+  --bg-primary: #f0f9ff;
+  --bg-secondary: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #e1e5e9;
+  --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  --shadow-light: rgba(0, 0, 0, 0.07);
+  --shadow-medium: rgba(14, 165, 233, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark mode colors */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border-color: #334155;
+  --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(14, 165, 233, 0.2);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,8 +35,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f9ff;
-  color: #333;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .App {

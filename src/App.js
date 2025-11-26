@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Amplify } from 'aws-amplify';
 import { signOut, getCurrentUser, fetchAuthSession } from '@aws-amplify/auth';
 import { awsConfig } from './aws-config';
+import { ThemeProvider } from './contexts/ThemeContext';
 import LoginPage from './components/LoginPage';
 import Portal from './components/Portal';
 import FloatingChatButton from './components/FloatingChatButton';
@@ -76,23 +77,25 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {!isLoggedIn ? (
-        <LoginPage onLogin={handleLogin} />
-      ) : (
-        <>
-          <Portal user={user} onLogout={handleLogout} />
-          <FloatingChatButton onClick={toggleChat} />
-          {isChatOpen && (
-            <ChatWindow 
-              user={user}
-              isOpen={isChatOpen} 
-              onClose={() => setIsChatOpen(false)} 
-            />
-          )}
-        </>
-      )}
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        {!isLoggedIn ? (
+          <LoginPage onLogin={handleLogin} />
+        ) : (
+          <>
+            <Portal user={user} onLogout={handleLogout} />
+            <FloatingChatButton onClick={toggleChat} />
+            {isChatOpen && (
+              <ChatWindow 
+                user={user}
+                isOpen={isChatOpen} 
+                onClose={() => setIsChatOpen(false)} 
+              />
+            )}
+          </>
+        )}
+      </div>
+    </ThemeProvider>
   );
 }
 

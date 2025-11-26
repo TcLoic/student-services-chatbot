@@ -1,8 +1,9 @@
 /* Message Input Styles */
 .message-input-container {
-  background: white;
-  border-top: 1px solid #e1e5e9;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
   padding: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .message-form {
@@ -22,14 +23,16 @@
   min-height: 40px;
   max-height: 100px;
   padding: 0.75rem;
-  border: 2px solid #e1e5e9;
+  border: 2px solid var(--border-color);
   border-radius: 20px;
   font-family: inherit;
   font-size: 0.9rem;
   resize: none;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.3s ease, color 0.3s ease;
   line-height: 1.4;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .message-textarea:focus {

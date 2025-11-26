@@ -1,0 +1,313 @@
+/* Calendar Widget Styles */
+.calendar-widget {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+  transition: all 0.3s ease;
+  max-width: 400px;
+}
+
+.calendar-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.1);
+}
+
+/* Header */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.calendar-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Filters */
+.calendar-filters {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.calendar-filters button {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #e1e5e9;
+  background: white;
+  color: #666;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendar-filters button:hover {
+  background: #f8fafc;
+  border-color: #0ea5e9;
+}
+
+.calendar-filters button.active {
+  background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+  color: white;
+  border-color: #0ea5e9;
+}
+
+/* Content */
+.calendar-content {
+  min-height: 200px;
+}
+
+/* Loading State */
+.calendar-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f3f4f6;
+  border-top-color: #0ea5e9;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error State */
+.calendar-error {
+  text-align: center;
+  padding: 2rem;
+  color: #ef4444;
+}
+
+.calendar-error button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.calendar-error button:hover {
+  background: #dc2626;
+}
+
+/* No Deadlines */
+.no-deadlines {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.no-deadlines p {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.no-deadlines small {
+  color: #999;
+}
+
+/* Deadlines List */
+.deadlines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.deadline-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border-left: 3px solid #0ea5e9;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.deadline-item:hover {
+  background: #f1f5f9;
+  transform: translateX(2px);
+}
+
+/* Deadline Icon */
+.deadline-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Deadline Content */
+.deadline-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.deadline-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deadline-course {
+  color: #0ea5e9;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.deadline-time {
+  color: #666;
+  font-size: 0.75rem;
+}
+
+/* Deadline Status */
+.deadline-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.days-until {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #333;
+  text-align: right;
+}
+
+.priority-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Show More */
+.show-more {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.show-more button {
+  background: none;
+  border: 1px solid #e1e5e9;
+  color: #0ea5e9;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.show-more button:hover {
+  background: #f0f9ff;
+  border-color: #0ea5e9;
+}
+
+/* Footer */
+.calendar-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.last-updated {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.last-updated span {
+  font-size: 0.75rem;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calendar-widget {
+    padding: 1.25rem;
+    max-width: none;
+  }
+  
+  .calendar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .calendar-filters {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .calendar-filters button {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .deadline-item {
+    padding: 0.5rem;
+  }
+  
+  .deadline-content {
+    min-width: 0;
+  }
+  
+  .deadline-title {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .deadline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .deadline-status {
+    align-self: flex-end;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
