@@ -173,6 +173,10 @@
   opacity: 0.95;
 }
 
+
+
+
+
 /* Responsive design */
 @media (max-width: 768px) {
   .header-content {

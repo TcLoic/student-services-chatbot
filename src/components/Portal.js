@@ -1,5 +1,6 @@
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
+import StudyTips from './StudyTips';
 import './Portal.css';
 
 const Portal = ({ onLogout, user }) => {
@@ -22,6 +23,8 @@ const Portal = ({ onLogout, user }) => {
           <h2>Welcome{user?.name ? `, ${user.name}` : ''}</h2>
           <p>Access all your academic and administrative services in one place.</p>
         </div>
+
+        <StudyTips />
         
         <div className="services-grid">
           <div className="service-card">

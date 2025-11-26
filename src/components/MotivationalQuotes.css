@@ -1,0 +1,252 @@
+/* Motivational Quotes Styles */
+.motivational-quotes {
+  background: linear-gradient(135deg, var(--gradient-primary), rgba(14, 165, 233, 0.8));
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.2);
+}
+
+.motivational-quotes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+/* Quotes Header */
+.quotes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.quotes-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.refresh-quote {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.refresh-quote:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(180deg);
+}
+
+/* Quote Container */
+.quote-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote-container.hidden {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.quote-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+.quote-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+  font-weight: 400;
+  position: relative;
+}
+
+.quote-text::before {
+  content: '"';
+  font-size: 3rem;
+  position: absolute;
+  left: -1rem;
+  top: -0.5rem;
+  opacity: 0.3;
+  font-family: serif;
+}
+
+.quote-attribution {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.quote-author {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.quote-category {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+/* Quote Progress */
+.quote-progress {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.progress-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.2);
+}
+
+.progress-dot.active {
+  background: white;
+  transform: scale(1.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .motivational-quotes {
+    padding: 1.25rem;
+  }
+  
+  .quote-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .quote-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+  }
+  
+  .quote-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .quote-text::before {
+    display: none;
+  }
+  
+  .quote-attribution {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .quotes-header h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .motivational-quotes {
+    padding: 1rem;
+  }
+  
+  .quote-text {
+    font-size: 0.95rem;
+  }
+  
+  .quote-author {
+    font-size: 0.85rem;
+  }
+  
+  .quote-category {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .progress-dots {
+    gap: 0.4rem;
+  }
+  
+  .progress-dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .motivational-quotes {
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
+}
+
+[data-theme="dark"] .refresh-quote:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
