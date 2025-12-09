@@ -70,6 +70,14 @@
   font-size: 1.1rem;
 }
 
+.welcome-section .student-id {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
